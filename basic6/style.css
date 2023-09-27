@@ -1,0 +1,76 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.전체 {
+    width: 352px;
+    background-color: aquamarine;
+    margin: auto;
+    margin-top: 30px;
+    overflow: hidden;
+}
+
+.전체 .자식 {
+    width: 104px;
+    height: 104px;
+    background-color: pink;
+    float: left;
+    margin-right: 20px;
+    text-align: center;
+    line-height: 104px;
+    color: white;
+}
+
+.전체 .첫째 {
+    background-image: url(img/img-1.png);
+    transition: 0.3s;
+}
+.전체 .첫째:hover {background-image: url(img/img-2.jpg);}
+
+.전체 .둘째 {
+    background-image: url(img/img-2.jpg);
+}
+.전체 .둘째::before{content: "before";}
+.전체 .둘째::after{content: "after";}
+
+.전체 .셋째 {
+    margin-right: 0;
+    background-image: url(img/img-3.png);
+}
+
+.전체 .약 {
+    clear: both;
+}
+
+
+
+.치매약::after{
+    content: "";display: block; clear: both;}
+
+
+
+.부모{background-color: #77f279;
+ width: 1000px;
+ margin: auto; margin-top: 30px;
+ padding: 20px;
+}
+
+
+.부모 .child{ background-color: #f54444;
+width: 33.3333%; float: left;
+}
+.부모 .일동{}
+.부모 .이동{}
+.부모 .삼동{}
+
+
+
+.삼촌{background-color: #77f279;
+    width: 1000px;
+    margin: auto; margin-top: 30px;
+    padding: 20px;
+   }
+   .삼촌 .child{ background-color: #f54444;
+   width: 33.3333%; float: left;
+   }

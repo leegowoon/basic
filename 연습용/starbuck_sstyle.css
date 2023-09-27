@@ -1,0 +1,21 @@
+@charset "UTF-8";
+
+*{margin: 0; padding: 0;}
+.치료::after{content: ""; clear: both; display: block;}
+
+
+.전체{width: 1000px; background-color: bisque;
+margin: auto; margin-top: 30px;}
+
+.전체 .첫번째{background-color: rgb(140, 20, 170);  padding: 150px;}
+.전체 .첫번째 .자식{
+    float: left;
+    height: 200px; width: 24.25%; margin-right: 1%;
+    background-color: black;
+}
+.전체 .첫번째 .자식.자식1{position: relative;}
+.전체 .첫번째 .자식.자식1 .상{background-color: aquamarine;
+width: 100%; height: 100%;
+background-image: url(	https://img.megabox.co.kr/SharedImg/2023/09/27/7ML6Wyigjy8Nz7bM8yr0zWW2AEfpAM8Y_420.jpg);
+background-size: cover;
+}

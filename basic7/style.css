@@ -1,0 +1,46 @@
+@charset "UTF-8";
+
+
+.약::after{content:"";
+    clear: both; display: block;}
+
+* {margin: 0;padding: 0;}
+         .어떤마을 {background-color: #FBA1B7; padding: 20px;}
+         .어떤마을 .놀부 {background-color: #FFD1DA; padding: 20px;}
+         .어떤마을 .놀부 .자식 {background-color: #FFDBAA;
+            float: left;}
+         .어떤마을 .놀부 .자식.하나 {}
+         .어떤마을 .놀부 .자식.둘 {}
+         .어떤마을 .놀부 .자식.셋 {}
+         .어떤마을 .놀부 .자식.넷 {}
+         .어떤마을 .놀부 .효자{clear: both;}
+
+         .어떤마을 .흥부{background-color: #8062D6;
+        margin-top: 30px; padding: 20px;
+        }
+
+        .어떤마을 .흥부:hover{color: blue;}
+        
+        /* ::before,::after는 inline요소이다.(글자와 같은 성질)
+        inline요소는 공간을 인식하지 못홤.
+        clear:both는 부모가 공간을 인식하지 못할때 인식할수 있도록함
+        단, clear:both는 block요소일때만 실행됨 */
+
+        .어떤마을 .흥부::before{content:"";}
+        .어떤마을 .흥부::after{content:"";
+            clear: both; display: block;}
+
+        .어떤마을 .흥부 .자식{background-color: #D8D9CF; float: left;}
+
+        .어떤마을 .흥부 .자식.하나{}
+        .어떤마을 .흥부 .자식.둘{}
+        .어떤마을 .흥부 .자식.셋{}
+        .어떤마을 .흥부 .자식.넷{}
+
+        .칠부{background-color: #EF5B0C;
+        margin-top: 30px; padding: 20px;}
+        .칠부 .자식{background-color: #2B7A0B; float: left;}
+        .칠부 .자식.하나{}
+        .칠부 .자식.둘{}
+        .칠부 .자식.셋{}
+        .칠부 .자식.넷{}

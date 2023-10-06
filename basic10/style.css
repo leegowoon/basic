@@ -1,0 +1,84 @@
+@charset "UFT-8";
+*{margin: 0; padding: 0;}
+.깨짐현상방지::after{content: ""; clear: both; display: block;}
+
+
+/* #전체 : id를 호출하는 방법 // id는 전체 사이트에 유일한 이름이어야한다 // id는 하나의 이름만 가져야한다 */
+#전체{background-color: #C3ACD0; width: 1000px;
+    /* margin: 상하 좌우; */
+    margin: 0 auto;
+
+    margin: 30px auto 0;
+    /* ex) 위에만 마진을 주고싶을 때 값을 세개로 // margin: 30px auto 0; 위 좌우 아래 */
+
+    /* 
+    margin-top: 0;
+    margin-bottom: 0;
+    margin-left: auto;
+    margin-right: auto;
+    는 margin: 0 auto;를 압축한 것 */
+
+}
+
+#전체 .놀부{padding: 20px;}
+#전체 .놀부 .자식{width: 23.5%; margin-right: 2%;
+float: left; background-color: rgb(255, 255, 255); /* float: right; 순서가 왼쪽부터 차례대로 */
+
+}
+#전체 .놀부 .자식.자식1{}
+#전체 .놀부 .자식.자식1 img{width: 100%;}
+
+#전체 .놀부 .자식.자식2{
+
+    /* 공간의 넓이 = padding-left + border-left + width + padding-right + border-right
+    공간의 높이 = padding-top + border-top + height + padding-bottom + border-bottom
+
+    공간의 넓이 = 10px + 5px + 25% + 10px + 5px
+    공간의 높이 = 10px + 5px + 자식의높이 + 10px + 5px */
+    
+    padding: 10px; border: 5px solid red; /* 선 : 크기 굵기 색 */
+    box-sizing: border-box;
+    background-image: url(https://hangang.seoul.go.kr/www/file/thumbnail.do?fkey=8a68efaf8993a4364344e9dc5b24d8b2eeba585490e6a95f7c50e0256d46de80c3d8a396c9d35f439bf36b099fc4373022aae6c4d29caf94b16d73470047edb9);
+    
+    
+}
+
+
+#전체 .놀부 .자식.자식3{height: 200px; background-image: url(https://cdn-icons-png.flaticon.com/128/3419/3419250.png); /* 배경을 채우기위해서 이미지가 반복됨 */
+    background-size: 50px; /* 이미지 크기조절 */
+    background-repeat: no-repeat; /* 이미지반복 */
+    /* background-position: center center; */ /* x축-y축 : 값이 같을 때 단축할 수 있음 */
+    /* background-position: center; */ /* x축-y축 : 값이 같을 때 단축할 수 있음 */
+    background-position: 50% bottom; /* 마이너스 값도 가능 */
+    
+}
+
+
+#전체 .놀부 .자식.자식4{
+    position: relative; 
+    margin-right: 0;
+    height: 200px; background-image: url(https://www.bt21.com/im/boon/boon_event02_v2.png);
+    background-size: cover; /* background-size: cover; : 높이 맞춰짐, 넓이X */ /* background-size: contain; : 다 보이게 해줌 */
+    background-position: center;
+    overflow: hidden; /* 영역안에서만 */ 
+    
+}
+
+
+#전체 .놀부 .자식.자식4 .text{
+    background-color: coral;
+    position: absolute;
+    left: 50%; top: 100%; /* top을 -100%으로 하면 위에서 아래로 떨어짐 */
+    /* 부모와의 거리 left기준은 부모의 넓이, top기준은 부모의 높이*/
+    padding: 10px 30px;
+    transform: translate(-50%, -50%); /* transform: translate(x축, y축); */ /* 여기서 %(백분율)기준은 .text자신 */
+    border-radius: 10px; /* 도형에 라운드 */
+    opacity: 0; /* 0.5는 5%라는 뜻, opacity 0;은 눈에는 안보이지만 존재는 한다는 뜻*/
+    color: #fff;
+    transition: 0.3s;
+
+}
+
+#전체 .놀부 .자식.자식4:hover .text{opacity: 1; top: 50%;}
+
+

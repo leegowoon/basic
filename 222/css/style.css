@@ -1,0 +1,76 @@
+@charset "UTF-8";
+
+*{margin: 0; padding: 0;}
+
+/* reset */
+ul,ol,li{list-style: none;} /* 블릿기호삭제 */
+
+a{color: #333; text-decoration: none;} /* text-decoration: none; 밑줄삭제 */
+
+.clearfix::after{content: ""; clear: both; display: block;}
+
+/* layout */
+#wrap{width: 1000px; margin: 0 auto;}
+
+/* header */
+#header{}
+#header h1{float: left; width: 110px; padding-top: 15px;}
+/* inline요소 안에는 block요소 들어가지 않음
+block요소 안에는 block요소, inline요소 다 들어감 */
+
+#header h1 a{}
+#header h1 a img{width: 100%;} /* img가 a태그를 따라간게 아니다 */
+
+#header .nav{float: right; background-color: #ddd;}
+#header .nav ul{}
+#header .nav ul li{
+    position: relative;
+    float: left; width: 140px; text-align: center;} /* display: block; >> a태그 속성을 바꿔서 부모넓이가 다 차지하도록>>버튼 */
+#header .nav ul li a{display: block; padding: 24px 20px 20px; transition: 0.3s;}
+#header .nav ul li a:hover{background-color: #ccc;}
+
+
+#header .nav ul li .submenu{
+    display: none;
+    position: absolute;
+    left: 0; top: 69px;
+}
+#header .nav ul li .submenu li{}
+#header .nav ul li .submenu li a{
+    background-color: #888;
+    padding: 10px;
+    color: #fff;
+
+}
+#header .nav ul li .submenu li a:hover{
+    background-color: #666;
+}
+
+/* banner */
+#banner{overflow: hidden;}
+#banner .slidelist{width: 3000px; position: relative;}
+#banner .slidelist .slideImg{
+    position: relative;
+    
+    float: left;
+    width: 1000px;}
+
+#banner .slidelist .slideImg h2{
+    position: absolute;
+    left: 50%; top: 50%;
+    transform: translate(-50%,-50%);
+    background-color: rgba(0,0,0,.4);
+    padding: 10px 30px;
+    border-radius: 20px;
+    color: #fff;
+    
+
+}
+
+#banner .slidelist .slideImg img{width: 100%; vertical-align: top;
+/* img태그에 아래쪽에 빈틈이 생기는 이유 >> 인라인요소이기 때문이다
+1) display: block;
+2) vertical-align:top; */}
+
+
+

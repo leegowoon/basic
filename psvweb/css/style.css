@@ -1,0 +1,47 @@
+@charset "UTF-8";
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&family=Roboto:wght@300&display=swap');
+
+@import url(reset.css); /* reset.css 연결하는방법2 */
+
+/* font-family: 'Open Sans', sans-serif; */
+/* font-family: 'Roboto', sans-serif; */
+
+/* h1{
+    font-family: 'Roboto', sans-serif;
+    font-size: 20px;} */
+
+
+/* Layout */
+.container{width: 1146px; margin: 0 auto;}
+
+
+body{
+    /* font-size: 18px; //16px 기본값
+    line-height: 27px;
+    font-family: 'Open Sans', sans-serif;
+    font-style: normal; */
+
+    /* font-style font-variant font-weight font-size/line-height font-family */
+    /* font: italic small-caps bold 12px/30px Georgia, serif; */
+
+    font: normal 18px/27px 'Open Sans', sans-serif; /* 폰트는 보통 ''로 묶는다 */
+}
+
+a{color: #f0ad64; text-decoration: none;} /* text-decoration: none; 밑줄삭제 */
+a:hover{text-decoration: underline;} /* text-decoration: underline; 밑라인생성 */
+
+/* header */
+header{position: fixed; left: 0; right: 0;
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+header .logo{float: left;}
+header .logo a{display: block; width: 54px; height: 54px;
+    background-image: url(../img/logo.png);
+    text-indent: -99999999em;
+}
+
+header nav{float: right;}
+header nav ul{}
+header nav ul li{float: left;}
+header nav ul li a{}

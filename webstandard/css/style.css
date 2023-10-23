@@ -1,0 +1,426 @@
+@charset "UTF-8";
+
+/* font-family: 'Nanum Brush Script', cursive;
+font-family: 'Nanum Gothic', sans-serif; */
+
+
+/* 레이아웃 */
+#wrap{}
+#header{
+    height: 325px;
+    background: url(https://media.istockphoto.com/id/982563500/ko/%EC%82%AC%EC%A7%84/%EB%B8%94%EB%9E%99-%EB%AA%A9%EC%9E%AC-%ED%85%8D%EC%8A%A4%EC%B2%98%EC%99%80.jpg?s=2048x2048&w=is&k=20&c=DZ6QXAPfZFeAANwLuOcp7-ZnRkiv7kdA9uOKLQTaQBQ=) 
+    center top;
+}
+
+
+
+
+#contents{}
+
+
+
+/* contents layout */
+.cont_nav{
+    background-color: #f6fdff;
+}
+#cont_tit{
+    background-color: #eaf7fd;
+}
+
+#cont_ban{
+    background-color: #dceff7;
+}
+#cont_cont{
+    background-color: #f6fdff;
+}
+
+
+
+
+
+
+/* container */
+
+.container{
+    width: 990px;
+    margin: 0 auto;
+}
+
+/* header */
+.header{}
+.header .header-menu{
+    text-align: right;
+    /* = width: 170px;
+    margin-left: auto; */
+}
+.header .header-menu a{
+    color: #fff;
+    
+}
+
+.header .header-title{
+    text-align: center;
+}
+.header .header-title h1{
+    background-color: #4aa8d4;
+    color: #fff;
+    font-size: 28px;
+    text-transform: uppercase;
+    text-align: center;
+    margin-top: 40px;
+    display: inline-block;
+    padding: 5px 20px 6px; /* 위 좌우 아래 */
+    /* inline요소는 padding과 margin이 좌우만 적용, 상하X */
+}
+.header .header-title a{
+    display: inline-block;
+    color: #fff;
+    font-size: 18px;
+    padding: 5px 20px 6px;
+    background-color: #2698cb;
+    margin-top: -5px; /* margin은 마이너스값(음수)을 줄 수있지만 padding은 마이너스값 줄수없음 */
+}
+
+.header .header-icon{
+    text-align: center;
+    margin-top: 30px;}
+.header .header-icon a{
+    display: inline-block;
+    width: 60px;
+    height: 60px;
+    background-image: url(../img/icon.png);
+    margin: 0 3px;
+}
+
+
+.header .header-icon .icon1{
+    background-position: 0 0;
+}
+.header .header-icon .icon2{
+    /* 포토샵에서 아이콘의 높이가 60px >> y축으로 위로 움직이면 다음 아이콘이 배치되기 때문에 -60px을 준다(위로올리면 음수) */
+    background-position: 0 -60px; /* background-position: x값 y값; */
+}
+.header .header-icon .icon3{
+    background-position: 0 -120px;
+}
+.header .header-icon .icon4{
+    background-position: 0 -180px;
+}
+
+/* x축을 앞으로 움직이면 되니깐 -60px  */
+.header .header-icon .icon1:hover{
+    background-position: -60px 0;
+}
+.header .header-icon .icon2:hover{
+    background-position: -60px -60px;
+}
+.header .header-icon .icon3:hover{
+    background-position: -60px -120px;
+}
+.header .header-icon .icon4:hover{
+    background-position: -60px -180px;
+}
+
+
+/* nav */
+.nav{
+    display: none;
+    padding: 30px 0;
+} /* display: flex; : 자식을 정렬,부모가 깨지지않는다 */
+.nav>div{
+    float: left;
+    width: 40%;
+}
+.nav>div.last{
+    width: 20%;
+}
+.nav>div h3{
+    font-size: 18px;
+    color: #25a2d0;
+    margin-bottom: 4px;
+}
+.nav>div ol{
+    overflow: hidden; /* 부모한테주면 안깨짐 */
+}
+.nav>div ol li{
+    float: left;
+    width: 50%;
+    margin-bottom: 3px;
+    position: relative;
+}
+
+.nav>div ol li::after{content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 2px;
+    background-color: #25a2d0;
+    transform: scaleX(0); /* x 축을 따라 (수평방향)으로 요소의 크기를 조절하는 변형을 정의 */
+    transform-origin: left top; /* x값 y값 */
+    transition: 0.3s;
+}
+
+.nav>div ol li:hover::after{
+    transform: scale(1);
+}
+
+.nav>div.last ol li{
+    width: 100%;
+}
+.nav>div ol li a{}
+
+
+/* tit 나는 퍼블리셔다 */
+.tit{position: relative;}
+.tit h2{
+    font-size: 40px;
+    color: #2c94c4;
+    text-align: center;
+    font-family: 'Nanum Brush Script', cursive;
+    padding: 10px 0;
+    letter-spacing: 2px; /* 자간 */
+}
+.tit .btn{
+    position: absolute;
+    right: 0; top: 9px; /* top: 5px >> 원래 선생님이 주신것 */
+    width: 60px; height: 60px;
+    background: url(../img/icon.png) 0 -600px; /* 0 -600px >> background-position: ; */
+}
+
+.tit .btn.on{
+    background-position:  0 -660px;
+}
+
+/* banner */
+.ban{
+    padding: 24px 0 40px;
+    padding-left: 25px;
+}
+.ban img{
+    border: 4px solid #dcdcdc;
+}
+.ban img:hover{
+    /* = border: 4px solid #98dcdc; */
+    border-color: #98dcdc;
+}
+
+.ban .slick-arrow{
+    position: absolute;
+    left: -100px; top: 70px;
+    background: url(../img/icon.png);
+    width: 43px; height: 43px;
+    background-position: -150px 0;
+    text-indent: -99999em;}
+
+    /* em : 1em=slick-arrow가 가지고있는 폰트 크기
+    1rem : root자리가 가지고있는 폰트의 크기 // 실무에서는 1rem을 10px로 바꿔놓음 */
+
+
+.ban .slick-prev{}
+
+
+
+.ban .slick-prev:hover{
+    background-position: -193px 0;
+}
+.ban .slick-next{
+    left: auto;
+    right: -80px;
+    right: -100px;
+    background-position: -150px -43px;
+}
+.ban .slick-next{
+    background-position: -150px -43px;
+}
+
+
+/* 디자이너가 폰트어썸으로 줬다면 */
+/* css에서 fontawesome을 사용하는 방법 */
+
+/* .ban .slick-arrow{
+    position: absolute;
+    left: -80px; top: 70px;
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900;
+    visibility: hidden;
+    font-size: 30px;
+    color: #af70b4;
+}
+
+.ban .slick-prev{}
+.ban .slick-prev::before{
+content: "\f0a8";
+visibility: visible;
+}
+
+.ban .slick-next{
+    left: auto; right: -100px;
+}
+.ban .slick-next::before{
+    content: "\f35a";
+    visibility: visible;
+} */
+
+
+.ban .slick-dots{
+    text-align: center;
+}
+.ban .slick-dots li{
+    display: inline-block;
+    margin: 5px;}
+.ban .slick-dots li button{
+    width: 15px; height: 15px;
+    background-color: #5dbfeb;
+    border-radius: 50%;
+    font-size: 0;
+    cursor: pointer;
+    transform: scaleX(1);
+    transition: 0.3s;
+}
+
+
+.ban .slick-dots li.slick-active button{
+    background-color: #2b91c8;
+    transform: scaleX(1.3); /* 1.3= 원래 크기에서 30%커진것 */
+    border-radius: 7px;
+    transform-origin: left center; /* 버튼을 클릭하면 왼쪽에서부터 오른쪽 방향으로 커진다 */
+}
+
+
+/* cont */
+
+.cont{
+    padding-top: 30px;
+}
+
+
+.cont .colum{
+    /* margin-top: 50px; */
+
+    width: calc((100% - 122px)/3);
+    height: 363px;
+    float: left;
+    padding-right: 30px;
+    margin: 0 30px 30px 0;
+    border-right: 1px solid #c8c8c8;
+
+}
+
+.cont .col1{}
+.cont .col2{}
+.cont .col3{
+    border-right: 0;
+    margin-right: 0;
+    padding-right: 0;
+}
+.cont .col4{}
+.cont .col5{}
+.cont .col6{
+    border-right: 0;
+    margin-right: 0;
+    padding-right: 0;
+}
+
+
+.cont .colum h3{width: 60px; height: 60px;}
+
+.cont .colum h3 .ico_img{
+    background-image: url(../img/icon.png);
+
+    width: 60px; height: 60px;}
+
+
+
+
+.cont .col1 h3 .ico_img{
+    background-position: 0 -240px;
+}
+.cont .col2 h3 .ico_img{
+    background-position: 0 -300px;
+    
+}
+.cont .col3 h3 .ico_img{
+    background-position: 0 -360px;
+}
+.cont .col4 h3 .ico_img{
+    background-position: 0 -420px;
+}
+.cont .col5 h3 .ico_img{
+    background-position: 0 -480px;
+}
+.cont .col6 h3 .ico_img{
+    background-position: 0 -540px;
+}
+
+.cont .col1 h3 .ico_img:hover{
+    background-position: -60px -240px;
+}
+.cont .col2 h3 .ico_img:hover{
+    background-position: -60px -300px;
+}
+.cont .col3 h3 .ico_img:hover{
+    background-position: -60px -360px;
+}
+.cont .col4 h3 .ico_img:hover{
+    background-position: -60px -420px;
+}
+.cont .col5 h3 .ico_img:hover{
+    background-position: -60px -480px;
+}
+.cont .col6 h3 .ico_img:hover{
+    background-position: -60px -540px;
+}
+
+
+
+
+
+
+
+
+
+.cont .colum h3 .ico_tit{
+    font-size: 16px; /* 원래 기본값이 16px이지만 reset에서 13px로 설정했으므로 16px을 줌으로써 크기를 조금 키운다 */
+    color: #2c94c4;
+    padding-left: 70px;
+}
+
+.cont .colum .ico_desc{
+    border-bottom: 1px solid #c8c8c8;
+    padding-bottom: 15px;
+    margin-bottom: 15px;
+    padding-left: 70px;
+}
+
+
+/* 게시판 notice */
+.notice{}
+.notice h4{
+    font-size: 14px;
+    color: #fff;
+
+}
+.notice ul{}
+.notice ul li{
+    /* 말줄임말 */
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+.notice ul li a{}
+.notice .more{}
+
+
+
+
+
+
+
+
+
+
+
+
+
+

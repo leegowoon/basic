@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // var, let, const 키워드들로 선언된 변수들의 특징 및 차이점
+
+        // 1) let
+        // 변수를 만들 때 변수명 앞에 적는 키워드 중 하나
+        // scope(스코프) : 범위(프로그램에서의 범위를 의미)
+        // let, const >> 블록 레벨 스코프 >> {} (중괄호안에서만 살아남을수있다)
+        // var : 함수 레벨 스코프
+
+        // 2) var
+        // 함수 내에서 선언 된 변수는 함수 내에서만 유효하다 >> 함수 밖에서는 참조할 수 없다(사용할 수 없다)
+        // 함수 내부에서 선언된 변수 : 지역변수
+        // 함수 외부에서 선언된 변수 : 전역변수
+        // 함수 : function(){}
+
+        // 3) 블록 레벨 스코프 : let, const
+        // function(){}, if(){}, while(){}문 등에서 선언된 변수는 블록내에서만 유효하다 >> 블록 밖에서는 참조할 수 없다
+        // 코드 블록 내에서 선언된 변수 >> 지역변수
+
+
+        // ✔ let 키워드를 사용하여 변수를 만들면 의도치 않게 전역변수가 되어지는 것을 막을 수 있다
+        // 호이스팅이 되는 것 : var 변수, 이름이 있는 함수 >> function 이름(){}
+        // 호이스팅? : 메모리상에서 어디서든 참조할 수 있게 위쪽으로 올리는 것
+
+        console.log(name); //홍길동 //호이스팅이 되었기 때문
+        if(true){ //if구문 if문의 영역(스코프)
+            var name="홍길동";
+        }
+        console.log(name); // name 전역변수
+
+        if(true){
+            let name1="홍길동";
+            
+        }
+        /* console.log(name1); */ //undefind : 에러는 아닌데 발견되지 않았다
+
+        // 4) 변수선언 및 값 세팅(할당)
+        let user; // user라는 이름을 가지 변수를 생성한다 >> 선언 >> 선언만 했을뿐 아직 값이 셋팅한 것은 아니다
+        console.log(user) // 실행하면 >> undefind
+        user="강감찬";
+        console.log(user) // 실행하면 >> 강감찬
+
+        // 선언과 동시에 값 세팅(할당)
+        let phoneNumber="01094564755";
+        console.log(phoneNumber) // 실행하면 >> 01094564755
+
+        // 셋팅방법
+        /* let namename="이순신";
+        let age=44; // 숫자는 따옴표 X
+        let email="test@naver.com"; */
+
+        let namename="이순신",
+            age=44, // 숫자는 따옴표 X
+            email="test@naver.com";
+
+        // [5] const >> 불변
+        // 할당된 값을 변경되지 않도록 변수를 만들고자 한다면 const를 사용해야한다.
+        // 상수는 재할당할수 없다. >> 변경한다면 에러발생
+
+        const name4="김순동";
+
+        // name4="김미자"; //에러
+        console.log(name4)
+
+
+        /* 생성과 동시에 할당해야한다
+        const name5;
+        name5="이순신"; */
+        const name5="이순신";
+
+        //상수 사용방법
+        //다른 개발자들에게 상수라는 것을 알리는 용도로 const키워드를 사용하여 변수를 생성
+        //관습적으로 대문자로 표시를 많이 한다.
+        const PI=3.14;
+        const first_stage_background="#f20932";
+        const FIRST_STAGE_BACKGROUND="#CCC";
+        const LECTURE_RUNNING_TIME=30;
+
+
+    </script>
+    
+</body>
+</html>

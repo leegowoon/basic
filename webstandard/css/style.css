@@ -153,16 +153,17 @@ font-family: 'Nanum Gothic', sans-serif; */
     position: absolute;
     left: 0;
     bottom: 0;
-    width: 100%;
+    width: 0;
     height: 2px;
     background-color: #25a2d0;
     transform: scaleX(0); /* x 축을 따라 (수평방향)으로 요소의 크기를 조절하는 변형을 정의 */
-    transform-origin: left top; /* x값 y값 */
+    /* transform-origin: left top; */ /* x값 y값 */
     transition: 0.3s;
 }
 
 .nav>div ol li:hover::after{
-    transform: scale(1);
+    width: 100%;
+    /* transform: scale(1); */
 }
 
 .nav>div.last ol li{
@@ -183,7 +184,7 @@ font-family: 'Nanum Gothic', sans-serif; */
 }
 .tit .btn{
     position: absolute;
-    right: 0; top: 9px; /* top: 5px >> 원래 선생님이 주신것 */
+    right: 0; top: 5px; /* top: 5px >> 원래 선생님이 주신것 */
     width: 60px; height: 60px;
     background: url(../img/icon.png) 0 -600px; /* 0 -600px >> background-position: ; */
 }
@@ -207,7 +208,7 @@ font-family: 'Nanum Gothic', sans-serif; */
 
 .ban .slick-arrow{
     position: absolute;
-    left: -100px; top: 70px;
+    left: -80px; top: 70px;
     background: url(../img/icon.png);
     width: 43px; height: 43px;
     background-position: -150px 0;
@@ -217,7 +218,7 @@ font-family: 'Nanum Gothic', sans-serif; */
     1rem : root자리가 가지고있는 폰트의 크기 // 실무에서는 1rem을 10px로 바꿔놓음 */
 
 
-.ban .slick-prev{}
+/* .ban .slick-prev{} */
 
 
 
@@ -227,11 +228,10 @@ font-family: 'Nanum Gothic', sans-serif; */
 .ban .slick-next{
     left: auto;
     right: -80px;
-    right: -100px;
     background-position: -150px -43px;
 }
-.ban .slick-next{
-    background-position: -150px -43px;
+.ban .slick-next:hover{
+    background-position: -193px -43px;
 }
 
 
@@ -296,8 +296,6 @@ visibility: visible;
 
 
 .cont .colum{
-    /* margin-top: 50px; */
-
     width: calc((100% - 122px)/3);
     height: 363px;
     float: left;
@@ -323,60 +321,28 @@ visibility: visible;
 }
 
 
-.cont .colum h3{width: 60px; height: 60px;}
+.cont .colum h3{}
 
 .cont .colum h3 .ico_img{
     background-image: url(../img/icon.png);
-
     width: 60px; height: 60px;}
 
 
 
 
-.cont .col1 h3 .ico_img{
-    background-position: 0 -240px;
-}
-.cont .col2 h3 .ico_img{
-    background-position: 0 -300px;
-    
-}
-.cont .col3 h3 .ico_img{
-    background-position: 0 -360px;
-}
-.cont .col4 h3 .ico_img{
-    background-position: 0 -420px;
-}
-.cont .col5 h3 .ico_img{
-    background-position: 0 -480px;
-}
-.cont .col6 h3 .ico_img{
-    background-position: 0 -540px;
-}
+.cont .col1 h3 .ico_img{background-position: 0 -240px;}
+.cont .col2 h3 .ico_img{background-position: 0 -300px;}
+.cont .col3 h3 .ico_img{background-position: 0 -360px;}
+.cont .col4 h3 .ico_img{background-position: 0 -420px;}
+.cont .col5 h3 .ico_img{background-position: 0 -480px;}
+.cont .col6 h3 .ico_img{background-position: 0 -540px;}
 
-.cont .col1 h3 .ico_img:hover{
-    background-position: -60px -240px;
-}
-.cont .col2 h3 .ico_img:hover{
-    background-position: -60px -300px;
-}
-.cont .col3 h3 .ico_img:hover{
-    background-position: -60px -360px;
-}
-.cont .col4 h3 .ico_img:hover{
-    background-position: -60px -420px;
-}
-.cont .col5 h3 .ico_img:hover{
-    background-position: -60px -480px;
-}
-.cont .col6 h3 .ico_img:hover{
-    background-position: -60px -540px;
-}
-
-
-
-
-
-
+.cont .col1 h3 .ico_img:hover{background-position: -60px -240px;}
+.cont .col2 h3 .ico_img:hover{background-position: -60px -300px;}
+.cont .col3 h3 .ico_img:hover{background-position: -60px -360px;}
+.cont .col4 h3 .ico_img:hover{background-position: -60px -420px;}
+.cont .col5 h3 .ico_img:hover{background-position: -60px -480px;}
+.cont .col6 h3 .ico_img:hover{background-position: -60px -540px;}
 
 
 
@@ -395,10 +361,14 @@ visibility: visible;
 
 
 /* 게시판 notice */
-.notice{}
-.notice h4{
+.notice{
+    position: relative;
+}
+.col1 h4{
     font-size: 14px;
-    color: #fff;
+    color: #0093bd;
+    font-weight: bold;
+    padding-bottom: 3px;
 
 }
 .notice ul{}
@@ -407,9 +377,163 @@ visibility: visible;
     overflow: hidden;
     text-overflow: ellipsis;
     white-space: nowrap;
+
+    background: url(../img/dot.gif)no-repeat 0 8px;
+    padding-left: 8px;
 }
-.notice ul li a{}
-.notice .more{}
+
+.notice ul li a{
+    font-size: 12px;}
+
+.col1 .more{
+    width: 17px;
+    height: 17px;
+    background: url(../img/icon.png) -150px -90px;
+    right: 0; top: 0;
+}
+
+
+/* 게시판 유형2 */
+.notice2{
+    position: relative;
+    margin-top: 15px;
+}
+
+.notice2 ul{}
+.notice2 ul li{
+    overflow: hidden;
+    
+
+}
+.notice2 ul li a{
+    float: left;
+    width: 65%;
+
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+.notice2 ul li a span{
+    float: right;
+    width: 30%;
+
+}
+
+
+/* notice_hover */
+.notice_hover{}
+.notice_hover h4{
+    font-size: 14px;
+    color: #0093bd;
+    font-weight: bold;
+    padding-bottom: 3px;
+}
+.notice_hover ul{
+
+}
+.notice_hover ul li{
+    float: left;
+    margin-right: 2%;
+    width: 32%;
+}
+
+.notice_hover ul li:last-child{
+    margin-right: 0;
+}
+.notice_hover ul li a{}
+.notice_hover ul li a span{
+    position: relative;
+    display: block;
+    
+}
+.notice_hover ul li a span img{
+    width: 100%;
+
+    /* 이미지 요소가 가진 공간을 없애는 방법
+    inline요소이기때문에 알 수 없는 공간이 발생한다
+    1) display: block;
+    2) vertical-align: top; */
+    display: block;
+}
+.notice_hover ul li a span em{
+    /* 영역을 안보이게 하는 방법
+    1) display: none; >> 공간이 사라지고 애니메이션 O
+    2) visibility: hidden; >> 공간을 주고 애니메이션 X
+    3) opacity: 0; >> 공간도 주고 애니메이션 O */
+    opacity: 0;
+    transition: 0.3s;
+
+    position: absolute;
+    left: 0; top: 0;
+    width: 100%; height: 100%; /* = right: 0; bottom: 0; */
+    background-color: rgba(0, 0, 0, 0.7);
+    color: #fff;
+
+    /* 글자 가운데 정렬 */
+    /* line-height: 92px;
+    text-align: center; */
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.notice_hover ul li a span:hover em{opacity: 1;}
+.notice_hover ul li a strong{
+    font-size: 12px;
+    display: block;
+    padding-top: 3px;
+}
+
+
+/* notice_hover2 */
+.notice_hover2{}
+.notice_hover2 ul{}
+.notice_hover2 ul li{
+    float: left;
+    width: 32%;
+    margin-right: 2%;
+
+}
+
+/* .notice_hover2 ul li:last-child{} >> 막내
+.notice_hover2 ul li:first-child{} >> 첫째
+.notice_hover2 ul li:nth-child(4){} */
+.notice_hover2 ul li:last-child{
+    margin-right: 0;
+}
+
+
+/* ::before() >> 가상요소 // html에 태그로 존재X */
+
+
+.notice_hover2 ul li a{}
+.notice_hover2 ul li a span{
+    display: block;
+    position: relative;
+    overflow: hidden;
+}
+.notice_hover2 ul li a span img{
+    width: 100%;
+    display: block;
+    
+}
+.notice_hover2 ul li a span em{
+    position: absolute;
+    bottom: -30px; left: 0;
+    /* right: 0; */ width: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    transition: 0.3s;
+    text-align: center;
+    padding: 3px 0;
+}
+.notice_hover2 ul li a span:hover em{
+    bottom: 0;
+}
+.notice_hover2 ul li a span strong{
+    font-size: 12px; padding-top: 3px;
+    display: block;
+}
+
 
 
 
